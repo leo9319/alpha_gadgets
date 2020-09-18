@@ -33,6 +33,10 @@
          </div>
 
          <div class="form-row mb-4">
+            <input type="text" name="facebook_profile_link" class="form-control" placeholder="Facebook Profile Link" required>
+         </div>
+
+         <div class="form-row mb-4">
             <textarea class="form-control" name="address" rows="3" placeholder="Address"></textarea>
          </div>
 
@@ -59,8 +63,8 @@
          <button class="btn btn-info my-4 btn-block" type="submit">Submit</button>
          <hr>
          <p class="text-center">By clicking
-            <em>Sign up</em> you agree to our
-            <a href="" target="_blank">terms of service</a>
+            <em>Submit</em> you agree to our
+            <a href="{{ route('terms_and_conditions') }}" target="_blank">terms of service</a>
          </p>
      </form>
 </div>

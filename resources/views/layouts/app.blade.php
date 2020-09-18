@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/logo/favicon.ico') }}" type="image/x-icon"/>
     @yield('header_styles')
 </head>
 <body>

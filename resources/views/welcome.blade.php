@@ -8,12 +8,13 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="icon" href="{{ asset('images/logo/favicon.ico') }}" type="image/x-icon"/>
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
-                background-image: url('images/home.jpg'); 
+                background-image: url('images/home.jpg');
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -110,7 +111,7 @@
                 color: red;
                 text-transform: uppercase;
                 font-size: 50px;
-            }   
+            }
 
             .timer-board {
                 margin-bottom: 30px;
@@ -120,7 +121,7 @@
                 margin: 0;
                 font-size: 30px;
                 color: #afc1c5;
-            }     
+            }
         </style>
     </head>
     <body>
@@ -147,9 +148,11 @@
                     alpha gadgets
                 </div>
 
-                <div class="cta">
-                    <a href="{{ route('preorder.create') }}" class="btn btn-info">Pre Order Now</a>
-                </div>
+                @guest
+                    <div class="cta">
+                        <a href="{{ route('preorder.create') }}" class="btn btn-info">Pre Order Now</a>
+                    </div>
+                @endguest
             </div>
         </div>
 

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <p>The pre order for current shipment lot is still in progress. Please login after 30 September, 2020 to know the status of your order. Thank you</p>
                 </div>
             </div>
         </div>

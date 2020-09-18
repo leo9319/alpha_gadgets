@@ -15,10 +15,10 @@ class CreatePreOrdersTable extends Migration
     {
         Schema::create('pre_orders', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->string('email');
+            $table->unsignedBigInteger('user_id');
             $table->string('mobile');
-            $table->string('address')->nullable();
+            $table->text('facebook_profile_link')->nullable();
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }

@@ -9,8 +9,8 @@
         <td>{{ config('app.url') . '/login' }}</td>
     </tr>
     <tr>
-        <td><b>Mobile:</b></td>
-        <td>{{ $client_data['mobile'] }} (use this to login)</td>
+        <td><b>Email:</b></td>
+        <td>{{ $client_data['email'] }}</td>
     </tr>
     <tr>
         <td><b>Password:</b></td>

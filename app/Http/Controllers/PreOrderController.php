@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mail\OrderConfirmation;
 use App\PreOrder;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class PreOrderController extends Controller
@@ -44,11 +46,22 @@ class PreOrderController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
 
+        $user = User::updateOrCreate(
+                    ['email' => $request->email],
+                    [
+                        'name' => $request->full_name,
+                        'email' => $request->email,
+                        'password' => Hash::make($request->password),
+                    ]
+                );
+
         PreOrder::updateOrCreate(
-            ['mobile' => $request->mobile],
             [
-                'full_name' => $request->full_name,
-                'email' => $request->email,
+                'user_id' => $user->id,
+            ],
+            [
+                'mobile' => $request->mobile,
+                'facebook_profile_link' => $request->facebook_profile_link,
                 'address' => $request->address
             ]
         );
